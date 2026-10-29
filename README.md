@@ -1,36 +1,103 @@
-# SmartSpend v2 — Login, profile, and cloud transactions
+# SmartSpend 💰
 
-## 1. Keep the old project
-Do not delete the old `smartspend-starter` folder. Keep it as a backup until your transactions are transferred.
+**Your Money, In Focus**
 
-## 2. Install and run
-1. Extract this ZIP into a NEW folder, for example `Downloads\smartspend-v2`.
-2. Open the folder that contains `package.json` in VS Code.
-3. Open Terminal > New Terminal and run:
-   ```powershell
+SmartSpend is a personal finance tracking web application designed to help users manage their income and expenses, organize transactions, and understand their spending habits in one place.
+
+🌐 **Live Website:** https://kandisirivalli.github.io/SmartSpend/
+
+## ✨ Features
+
+- **User Authentication:** Create an account and log in securely using Supabase Authentication.
+- **Income Tracking:** Record and manage your income.
+- **Expense Tracking:** Add expenses and categorize your spending.
+- **Transaction Management:** Keep your financial transactions organized.
+- **Personalized Accounts:** Each user has their own account.
+- **Cloud Database:** Store and retrieve transactions using Supabase.
+- **Privacy:** Users can access only their own transactions through database security policies.
+- **Responsive Interface:** Access the application through a modern web browser.
+
+## 🛠️ Technologies Used
+
+- React
+- TypeScript
+- Vite
+- CSS
+- Supabase Authentication
+- Supabase PostgreSQL Database
+- Git and GitHub
+- GitHub Pages
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Install the following:
+
+- Node.js
+- npm
+- Git
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/KandiSirivalli/SmartSpend.git
+   ```
+
+2. Navigate to the project folder:
+
+   ```bash
+   cd SmartSpend
+   ```
+
+3. Install dependencies:
+
+   ```bash
    npm install
    ```
-4. Create a Supabase project at https://supabase.com/dashboard.
-5. In Supabase, open SQL Editor > New query. Paste all of `supabase_schema.sql`, then click Run.
-6. In Supabase Project Settings, find the Project URL and publishable/anon key.
-7. Copy `.env.example` to a new file named `.env` in the project root. Fill in:
+
+4. Create a `.env` file in the project root directory and add your Supabase configuration:
+
+   ```env
+   VITE_SUPABASE_URL=your_supabase_project_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_publishable_key
    ```
-   VITE_SUPABASE_URL=https://YOUR_PROJECT_ID.supabase.co
-   VITE_SUPABASE_ANON_KEY=YOUR_PUBLIC_ANON_OR_PUBLISHABLE_KEY
-   ```
-   Do not use a service-role/secret key in this browser app.
-8. Stop and restart Vite if it was already running, then:
-   ```powershell
+
+5. Start the development server:
+
+   ```bash
    npm run dev
    ```
-9. Open the URL printed in the terminal (usually http://localhost:5173).
 
-## 3. Login and profile
-When Supabase is configured, the app starts with login and signup. After logging in, click the avatar on the top right or the profile at the lower left to open the profile and log out.
+6. Open the local URL displayed in your terminal.
 
-## 4. About your old transactions
-The app has an **Import old transactions** button after login. It can import non-sample transactions only if the old app stored them under the same browser localStorage key (`smartspend_transactions`) and the new app is opened on the same origin/port. If it reports no saved transactions, do not clear browser data; open the old version on its old localhost port and we can export the data through the browser console or copy it manually.
-The built-in sample transactions are demo data and are not automatically imported. This avoids mixing sample data into your real account.
+## 🔐 Security
 
-## 5. Security
-Each transaction belongs to a Supabase authenticated user. Row Level Security (RLS) policies in `supabase_schema.sql` enforce that users can access only rows where `user_id = auth.uid()`. Never disable RLS or place a Supabase service-role key in the frontend.
+- Supabase Authentication manages user sign-in and registration.
+- Row Level Security (RLS) policies protect users' transactions.
+- Environment variables configure the Supabase connection.
+- Never commit your `.env` file or expose your Supabase secret or service-role key.
+
+## 🌍 Deployment
+
+SmartSpend is deployed using GitHub Pages and GitHub Actions. Pushes to the `main` branch trigger the configured build and deployment workflow.
+
+## 📌 Future Enhancements
+
+- Monthly spending reports and visual analytics
+- Budget planning and spending limits
+- Savings goals and progress tracking
+- Downloadable financial reports
+- Improved transaction search and filtering
+
+## 👩‍💻 Author
+
+**Kandi Sirivalli**
+
+- GitHub: https://github.com/KandiSirivalli
+
+---
+
+*SmartSpend — Manage your money with clarity and confidence.*
